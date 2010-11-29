@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="order" namespace="/order" extends="order-default">
+        <action name="list" class="orderAction" method="list">
+            <result>/order/list.jsp</result>
+        </action>
+        <action name="new" class="orderAction" method="newn">
+            <result>/order/new.jsp</result>
+        </action>
+		<action name="create" class="orderAction" method="create">
+			<interceptor-ref name="orderStack" />
+            <result type="redirectAction">list</result>
+            <result name="input">/order/new.jsp</result>
+            <result name="error">/order/new.jsp</result>
+        </action>
+        <action name="edit" class="orderAction" method="edit">
+            <result>/order/edit.jsp</result>
+        </action>
+		<action name="update" class="orderAction" method="update">
+			<interceptor-ref name="orderStack" />
+            <result type="redirectAction">list</result>
+            <result name="input">/order/edit.jsp</result>
+            <result name="error">/order/edit.jsp</result>
+        </action>
+        <action name="show" class="orderAction" method="show">
+            <result>/order/show.jsp</result>
+        </action>
+		<action name="destroy" class="orderAction" method="destroy">
+            <result type="redirectAction">list</result>
+            <result name="input">/order/list.jsp</result>
+            <result name="error">/order/list.jsp</result>
+        </action>
+        
+        <action name="request" class="orderAction" method="request">
+            <result>/order/request.jsp</result>
+        </action>
+        <action name="submitRequest" class="orderAction" method="submitRequest">
+        	<interceptor-ref name="orderStack" />
+            <result type="redirect">/jbpm/list.action</result>
+            <result name="input">/order/request.jsp</result>
+        </action>
+        <action name="approve" class="orderAction" method="approve">
+            <result>/order/approve.jsp</result>
+        </action>
+        <action name="submitApprove" class="orderAction" method="submitApprove">
+        	<interceptor-ref name="orderStack" />
+            <result type="redirect">/jbpm/list.action</result>
+            <result name="input">/order/approve.jsp</result>
+        </action>
+    </package>
+</struts>

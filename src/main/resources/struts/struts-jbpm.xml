@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="jbpm" namespace="/jbpm" extends="order-default">
+        <action name="list" class="jbpmAction" method="list">
+            <result>/jbpm/list.jsp</result>
+        </action>
+        <action name="deploy" class="jbpmAction" method="deploy">
+            <result type="redirectAction">list</result>
+        </action>
+		<action name="destroy" class="jbpmAction" method="destroy">
+            <result type="redirectAction">list</result>
+        </action>
+        <action name="start" class="jbpmAction" method="start">
+            <result type="redirectAction">list</result>
+        </action>
+        <action name="view" class="jbpmAction" method="view">
+            <result>/jbpm/view.jsp</result>
+        </action>
+    </package>
+</struts>

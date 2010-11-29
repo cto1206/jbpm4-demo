@@ -1,0 +1,63 @@
+<!DOCTYPE dataset SYSTEM "my-dataset.dtd">
+<dataset>
+	<table name="orders">
+		<column>id</column>
+        <column>name</column>
+        <column>note</column>
+        <column>wf_id</column>
+        <!-- deleteByPrimaryKey -->
+        <row>
+            <value>101</value>
+            <value>name_101</value>
+            <value>note_101</value>
+            <value></value>
+        </row>
+        <!-- selectByPrimaryKey -->
+        <row>
+            <value>102</value>
+            <value>name_102</value>
+            <value>note_102</value>
+            <value></value>
+        </row>
+        <!-- updateByPrimaryKeySelective -->
+        <row>
+            <value>103</value>
+            <value>name_103</value>
+            <value>note_103</value>
+            <value></value>
+        </row>
+        <!-- updateByPrimaryKey -->
+        <row>
+            <value>104</value>
+            <value>name_104</value>
+            <value>note_104</value>
+            <value></value>
+        </row>
+        <!-- page -->
+        <row>
+            <value>105</value>
+            <value>name_page</value>
+            <value>note_page</value>
+            <value></value>
+        </row>
+        <row>
+            <value>106</value>
+            <value>name_page</value>
+            <value>note_page</value>
+            <value></value>
+        </row>
+        <row>
+            <value>107</value>
+            <value>name_page</value>
+            <value>note_page</value>
+            <value></value>
+        </row>
+        <!-- getByWfId -->
+        <row>
+            <value>108</value>
+            <value>name_wf</value>
+            <value>note_wf</value>
+            <value>wf_id_wf</value>
+        </row>
+	</table>
+</dataset>

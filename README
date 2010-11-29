@@ -1,0 +1,5 @@
+This is a Jbpm4 demo.
+use the next technology: spring, mybatis, struts2, jbpm4
+
+Please run the next command:
+run: mvn clean package

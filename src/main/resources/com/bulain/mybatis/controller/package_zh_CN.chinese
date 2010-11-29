@@ -1,0 +1,7 @@
+user.model=用户
+user.firstName=名
+user.lastName=姓
+
+order.model=订单
+order.name=名称
+order.note=备注

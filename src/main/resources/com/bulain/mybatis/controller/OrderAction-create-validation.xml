@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC "-//OpenSymphony Group//XWork Validator 1.0.3//EN"
+  		"http://www.opensymphony.com/xwork/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="order.name">
+		<field-validator type="requiredstring">
+			<param name="trim">true</param>
+			<message key="validate.requiredstring"></message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">1</param>
+			<param name="maxLength">20</param>
+			<message key="validate.stringlength"></message>
+		</field-validator>
+	</field>
+	<field name="order.note">
+		<field-validator type="stringlength">
+			<param name="minLength">0</param>
+			<param name="maxLength">20</param>
+			<message key="validate.stringlength"></message>
+		</field-validator>
+	</field>
+</validators>
