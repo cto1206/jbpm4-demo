@@ -1,5 +1,8 @@
 This is a Jbpm4 demo.
-use the next technology: spring, mybatis, struts2, jbpm4
+use the next technology: mysql, spring, mybatis, struts2, jbpm4
 
 Please run the next command:
-run: mvn clean package
+1, create mysql database for development, and change src/main/resources/jdbc.properties
+2, create mysql database for test, and change src/test/resources/jdbc-test.properties
+3, execute sql create table, mysql_create.sql
+4, mvn clean package
