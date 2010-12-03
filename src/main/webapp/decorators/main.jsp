@@ -3,8 +3,8 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator"%> 
 <html>
 	<head>
-		<link href="<s:url value='/public/stylesheets/globel.css'/>" rel="stylesheet" type="text/css"/>
 		<link href="<s:url value='/public/jquery/css/validate/jquery.validate.css'/>" rel="stylesheet" type="text/css"/>
+		<link href="<s:url value='/public/stylesheets/globel.css'/>" rel="stylesheet" type="text/css"/>
 		<script src="<s:url value='/public/jquery/js/jquery-1.4.2.js'/>" type="text/javascript"></script>
 		<script src="<s:url value='/public/jquery/js/jquery.validate.js'/>" type="text/javascript"></script>
 		<script src="<s:url value='/public/javascripts/public.js'/>" type="text/javascript"></script>

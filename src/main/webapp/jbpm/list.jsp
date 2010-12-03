@@ -4,7 +4,6 @@
 
 <html>
 <head>
-	<link href="<s:url value='/public/stylesheets/globel.css'/>" rel="stylesheet" type="text/css"/>
     <title>Workflow</title>
 </head>
 <body>

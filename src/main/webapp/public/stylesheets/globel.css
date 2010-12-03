@@ -27,7 +27,7 @@ a:hover {color: #fff; background-color:#000; }
 #login{height:20px; background:#B2B3A5; border-top: 1px solid; border-bottom: 1px solid; text-align: right; padding-right: 10px;}
 #main{margin-top:3px;}
 #sidebar{float:left; width:120px; height:200px; background:#E2E2E2; margin-left: 1px; border: 1px solid;}
-#content{margin-left:128px !important; margin-left:125px; margin-right:2px; background:#ffffff;}
+#content{margin-left:128px !important; margin-left:125px; height:200px; margin-right:2px; background:#ffffff;}
 #footer{height:20px; background:#ffffff;}
 
 /* focus */
