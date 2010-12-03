@@ -29,5 +29,12 @@
         <td class="footer-form-left"><s:url id="url" value="/jbpm/list" /><a href="<s:property value="#url"/>"><s:text name="action.back"/></a></td>
     </tr>
 </table>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#submitRequest").validate();
+});
+</script>
+
 </body>
 </html>

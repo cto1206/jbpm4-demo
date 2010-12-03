@@ -1,3 +1,11 @@
+$(document).ready(function() {
+    if ($.browser.msie){
+     	$("input[type='text'], input[type='password'], textarea, select")
+     		.focus(function(){$(this).addClass("ie_focus");})
+     		.blur(function(){$(this).removeClass("ie_focus");});
+    }
+});
+
 function destroy(){
 	if (confirm('Are you sure?')) { 
 		var f = document.createElement('form'); 

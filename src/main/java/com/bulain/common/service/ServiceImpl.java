@@ -11,7 +11,9 @@ public abstract class ServiceImpl<S extends Search,T> implements Service<S,T>{
 	public abstract Mapper<S,T> getMapper();
 	
 	public T get(Integer id){
-		return getMapper().selectByPrimaryKey(id);
+		T selectByPrimaryKey = getMapper().selectByPrimaryKey(id);
+		if(selectByPrimaryKey==null) throw new NotFoundException();
+		return selectByPrimaryKey;
 	}
 	public void insert(T user){
 		int count = getMapper().insert(user);

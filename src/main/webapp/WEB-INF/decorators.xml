@@ -2,4 +2,7 @@
 	<decorator name="main" page="main.jsp">
 	    <pattern>*</pattern>
    	</decorator>
+   	<decorator name="error" page="error.jsp">
+        <pattern>/error/*</pattern>
+    </decorator>
 </decorators>

@@ -15,13 +15,13 @@
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="user.firstName"/></td>
-        <td class="page-form-value"><s:textfield key="user.firstName"/></td>
+        <td class="page-form-value"><s:textfield key="user.firstName" cssClass="required" maxlength="50"/></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="user.lastName"/></td>
-        <td class="page-form-value"><s:textfield key="user.lastName"/></td>
+        <td class="page-form-value"><s:textfield key="user.lastName" cssClass="required" maxLength="50"/></td>
         <td></td>
         <td></td>
     </tr>

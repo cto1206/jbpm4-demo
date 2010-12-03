@@ -141,13 +141,13 @@ public class OrderAction extends PageSupportActionSupport{
 	}
 	
 	public void prepareSubmitRequest(){
-		if(order!=null){
+		if(order!=null && order.getId()!=null){
 			order = orderService.get(order.getId());
 		}
 	}
 	
 	public void prepareSubmitApprove(){
-		if(order!=null){
+		if(order!=null && order.getId()!=null){
 			order = orderService.get(order.getId());
 		}
 	}
