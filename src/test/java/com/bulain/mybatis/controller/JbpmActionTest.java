@@ -6,7 +6,7 @@ import org.jbpm.api.ProcessDefinition;
 import org.jbpm.api.ProcessInstance;
 import org.jbpm.api.task.Task;
 
-import com.bulain.common.JbpmTestCase;
+import com.bulain.common.test.JbpmTestCase;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 

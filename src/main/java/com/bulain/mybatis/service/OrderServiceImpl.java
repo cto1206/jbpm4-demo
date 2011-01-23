@@ -1,12 +1,12 @@
 package com.bulain.mybatis.service;
 
-import com.bulain.common.dao.Mapper;
-import com.bulain.common.service.ServiceImpl;
+import com.bulain.common.dao.PagedMapper;
+import com.bulain.common.service.PagedServiceImpl;
 import com.bulain.mybatis.dao.OrderMapper;
 import com.bulain.mybatis.model.Order;
 import com.bulain.mybatis.pojo.OrderSearch;
 
-public class OrderServiceImpl extends ServiceImpl<OrderSearch, Order> implements OrderService{
+public class OrderServiceImpl extends PagedServiceImpl<OrderSearch, Order> implements OrderService{
 	private OrderMapper orderMapper;
 	
 	public Order getByWfId(String wfId) {
@@ -14,7 +14,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderSearch, Order> implements
 	}
 	
 	@Override
-	public Mapper<OrderSearch, Order> getMapper() {
+	public PagedMapper<OrderSearch, Order> getPagedMapper() {
 		return orderMapper;
 	}
 

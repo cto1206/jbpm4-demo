@@ -2,8 +2,8 @@ package com.bulain.mybatis.controller;
 
 import java.util.List;
 
-import com.bulain.common.Struts2TestCase;
 import com.bulain.common.page.Page;
+import com.bulain.common.test.Struts2TestCase;
 import com.bulain.mybatis.model.Order;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
