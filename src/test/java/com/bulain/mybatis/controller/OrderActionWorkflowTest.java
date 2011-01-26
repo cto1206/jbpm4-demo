@@ -5,9 +5,9 @@ import java.util.Map;
 
 import org.jbpm.api.ProcessInstance;
 
-import com.bulain.common.test.JbpmTestCase;
 import com.bulain.mybatis.model.Order;
 import com.bulain.mybatis.service.OrderService;
+import com.bulain.mybatis.test.JbpmTestCase;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 
