@@ -1,63 +1,11 @@
-<!DOCTYPE dataset SYSTEM "my-dataset.dtd">
+<?xml version='1.0' encoding='UTF-8'?>
 <dataset>
-	<table name="orders">
-		<column>id</column>
-        <column>name</column>
-        <column>note</column>
-        <column>wf_id</column>
-        <!-- deleteByPrimaryKey -->
-        <row>
-            <value>101</value>
-            <value>name_101</value>
-            <value>note_101</value>
-            <value></value>
-        </row>
-        <!-- selectByPrimaryKey -->
-        <row>
-            <value>102</value>
-            <value>name_102</value>
-            <value>note_102</value>
-            <value></value>
-        </row>
-        <!-- updateByPrimaryKeySelective -->
-        <row>
-            <value>103</value>
-            <value>name_103</value>
-            <value>note_103</value>
-            <value></value>
-        </row>
-        <!-- updateByPrimaryKey -->
-        <row>
-            <value>104</value>
-            <value>name_104</value>
-            <value>note_104</value>
-            <value></value>
-        </row>
-        <!-- page -->
-        <row>
-            <value>105</value>
-            <value>name_page</value>
-            <value>note_page</value>
-            <value></value>
-        </row>
-        <row>
-            <value>106</value>
-            <value>name_page</value>
-            <value>note_page</value>
-            <value></value>
-        </row>
-        <row>
-            <value>107</value>
-            <value>name_page</value>
-            <value>note_page</value>
-            <value></value>
-        </row>
-        <!-- getByWfId -->
-        <row>
-            <value>108</value>
-            <value>name_wf</value>
-            <value>note_wf</value>
-            <value>wf_id_wf</value>
-        </row>
-	</table>
+  <orders id="101" name="name_101" note="note_101" wf_id=""/>
+  <orders id="102" name="name_102" note="note_102" wf_id=""/>
+  <orders id="103" name="name_103" note="note_103" wf_id=""/>
+  <orders id="104" name="name_104" note="note_104" wf_id=""/>
+  <orders id="105" name="name_page" note="note_page" wf_id=""/>
+  <orders id="106" name="name_page" note="note_page" wf_id=""/>
+  <orders id="107" name="name_page" note="note_page" wf_id=""/>
+  <orders id="108" name="name_wf" note="note_wf" wf_id="wf_id_wf"/>
 </dataset>

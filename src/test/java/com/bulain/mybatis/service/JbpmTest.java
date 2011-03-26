@@ -1,35 +1,50 @@
 package com.bulain.mybatis.service;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.jbpm.api.ExecutionService;
+import org.jbpm.api.ManagementService;
 import org.jbpm.api.ProcessInstance;
+import org.jbpm.api.RepositoryService;
+import org.jbpm.api.TaskService;
 import org.jbpm.api.task.Task;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.transaction.AfterTransaction;
+import org.springframework.test.context.transaction.BeforeTransaction;
 
-import com.bulain.mybatis.test.JbpmTestCase;
+import com.bulain.common.test.ServiceTestCase;
 
-public class JbpmTest extends JbpmTestCase {
+public class JbpmTest extends ServiceTestCase {
+    @Autowired
+    private RepositoryService repositoryService;
+    @Autowired
+    private ExecutionService executionService;
+    @Autowired
+    private TaskService taskService;
+    @Autowired
+    protected ManagementService managementService;
+    
 	private String deploymentId;
 	
-	public static void main(String[] args){
-		junit.textui.TestRunner.run(JbpmTest.class);
-	}	  
-	
-	protected void setUp() throws Exception {
-	    super.setUp();
-	    super.setUpJbpm();
+	@BeforeTransaction
+	public void setUp() throws Exception {
 	    deploymentId = repositoryService.createDeployment()
 	        .addResourceFromClasspath("jpdl/order.jpdl.xml")
 	        .deploy();
 	}
 	
-	protected void tearDown() throws Exception {
+	@AfterTransaction
+	public void tearDown() throws Exception {
 	    repositoryService.deleteDeploymentCascade(deploymentId);
-	    super.tearDownJbpm();
-	    super.tearDown();
 	}
 	
+	@Test
 	public void testOrderApprove() {
 	    Map<String, Object> variables = new HashMap<String, Object>(); 
 	    variables.put("owner", "johndoe");
@@ -58,8 +73,9 @@ public class JbpmTest extends JbpmTestCase {
 	    
 	    processInstance = executionService.findProcessInstanceById(pid);
 	    assertNull(processInstance);
-	  }
+	}
 	
+	@Test
 	public void testOrderReject() {
 	    Map<String, Object> variables = new HashMap<String, Object>(); 
 	    variables.put("owner", "johndoe");
@@ -108,5 +124,5 @@ public class JbpmTest extends JbpmTestCase {
 	    
 	    processInstance = executionService.findProcessInstanceById(pid);
 	    assertNull(processInstance);
-	  }
+	 }
 }

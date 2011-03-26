@@ -5,25 +5,26 @@ import java.util.List;
 import org.jbpm.api.ProcessDefinition;
 import org.jbpm.api.ProcessInstance;
 import org.jbpm.api.task.Task;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-import com.bulain.mybatis.test.JbpmTestCase;
+import com.bulain.common.test.ActionTestCase;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 
-public class JbpmActionTest extends JbpmTestCase {
-	public static void main(String[] args) {
-		junit.textui.TestRunner.run(JbpmActionTest.class);
-	}
-	
-	protected void setUp() throws Exception {
+public class JbpmActionTest extends ActionTestCase {
+    @Before
+	public void setUp() throws Exception {
 		super.setUp();
-		super.setUpCleanJbpm();
 	}
 
-	protected void tearDown() throws Exception {
+    @After
+	public void tearDown() throws Exception {
 		super.tearDown();
 	}
-
+    
+    @Test
 	public void testWorkflow() throws Exception {
 		initServletMockObjects();
 		ActionProxy proxy = getActionProxy("/jbpm/deploy");

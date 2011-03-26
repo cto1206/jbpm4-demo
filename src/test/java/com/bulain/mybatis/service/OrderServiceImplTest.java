@@ -1,6 +1,14 @@
 package com.bulain.mybatis.service;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import java.util.List;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.transaction.AfterTransaction;
+import org.springframework.test.context.transaction.BeforeTransaction;
 
 import com.bulain.common.page.Page;
 import com.bulain.common.test.ServiceTestCase;
@@ -8,23 +16,20 @@ import com.bulain.mybatis.model.Order;
 import com.bulain.mybatis.pojo.OrderSearch;
 
 public class OrderServiceImplTest extends ServiceTestCase {
+    @Autowired
 	private OrderService orderService;
 	
-	protected void setUp() throws Exception {
-		super.setUp();
+    @BeforeTransaction
+	public void setUpDB() throws Exception {
 		super.setUpDB("test-data/init_orders.xml");
-		orderService = (OrderService) applicationContext.getBean("orderService");
 	}
 
-	protected void tearDown() throws Exception {
+    @AfterTransaction
+	public void tearDownDB() throws Exception {
 		super.tearDownDB();
-		super.tearDown();
 	}
 	
-	public static void main(String[] args){
-		junit.textui.TestRunner.run(OrderServiceImplTest.class);
-	}
-
+    @Test
 	public void testGet() {
 		Order order = orderService.get(Integer.valueOf(102));
 		assertNotNull(order);
@@ -33,6 +38,7 @@ public class OrderServiceImplTest extends ServiceTestCase {
 		assertEquals("note_102", order.getNote());
 	}
 
+    @Test
 	public void testInsert() {
 		Order order = new Order();
 		order.setName("firstName");
@@ -40,6 +46,7 @@ public class OrderServiceImplTest extends ServiceTestCase {
 		orderService.insert(order);
 	}
 
+    @Test
 	public void testUpdate() {
 		Order order = new Order();
 		order.setId(Integer.valueOf(104));
@@ -48,10 +55,12 @@ public class OrderServiceImplTest extends ServiceTestCase {
 		orderService.update(order, true);
 	}
 
+    @Test
 	public void testDelete() {
 		orderService.delete(Integer.valueOf(101));
 	}
 
+    @Test
 	public void testFind() {
 		OrderSearch search = new OrderSearch();
 		search.setName("name_page");

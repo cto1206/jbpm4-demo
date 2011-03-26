@@ -3,28 +3,37 @@ package com.bulain.mybatis.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.jbpm.api.ExecutionService;
 import org.jbpm.api.ProcessInstance;
+import org.jbpm.api.RepositoryService;
+import org.jbpm.api.TaskService;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.bulain.common.test.ActionTestCase;
 import com.bulain.mybatis.model.Order;
 import com.bulain.mybatis.service.OrderService;
-import com.bulain.mybatis.test.JbpmTestCase;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 
-public class OrderActionWorkflowTest extends JbpmTestCase {
+public class OrderActionWorkflowTest extends ActionTestCase {
+    @Autowired
+    private OrderService orderService;
+    @Autowired
+    private RepositoryService repositoryService;
+    @Autowired
+    private ExecutionService executionService;
+    @Autowired
+    private TaskService taskService;
+    
 	private String processDefinitionId;
 	private String deploymentId;
 	
-	private OrderService orderService;
-	
-	public static void main(String[] args) {
-		junit.textui.TestRunner.run(OrderActionWorkflowTest.class);
-	}
-	
-	protected void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 	    super.setUp();
-	    super.setUpJbpm();
-	    super.setUpCleanJbpm();
 	    
 	    deploymentId = repositoryService.createDeployment()
 	        .addResourceFromClasspath("jpdl/order.jpdl.xml")
@@ -33,7 +42,8 @@ public class OrderActionWorkflowTest extends JbpmTestCase {
 	    orderService = (OrderService) applicationContext.getBean("orderService");
 	}
 	
-	protected void tearDown() throws Exception {
+	@After
+	public void tearDown() throws Exception {
 	    repositoryService.deleteDeploymentCascade(deploymentId);
 		super.tearDown();
 	}
@@ -50,6 +60,7 @@ public class OrderActionWorkflowTest extends JbpmTestCase {
 		return taskService.createTaskQuery().executionId(executionId).uniqueResult().getId();
 	}
 	
+	@Test
 	public void testWorkflowApprove() throws Exception{
 		String executionId = start();
 		String taskId = task(executionId);
@@ -98,6 +109,7 @@ public class OrderActionWorkflowTest extends JbpmTestCase {
 		orderService.delete(order.getId());
 	}
 	
+    @Test
 	public void testWorkflowReject() throws Exception{
 		String executionId = start();
 		String taskId = task(executionId);

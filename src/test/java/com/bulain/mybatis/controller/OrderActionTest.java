@@ -2,26 +2,30 @@ package com.bulain.mybatis.controller;
 
 import java.util.List;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
 import com.bulain.common.page.Page;
-import com.bulain.common.test.Struts2TestCase;
+import com.bulain.common.test.ActionTestCase;
 import com.bulain.mybatis.model.Order;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 
-public class OrderActionTest extends Struts2TestCase {
-	public static void main(String[] args) {
-		junit.textui.TestRunner.run(OrderActionTest.class);
-	}
-
-	protected void setUp() throws Exception {
+public class OrderActionTest extends ActionTestCase {
+    @Before
+	public void setUp() throws Exception {
 	    super.setUp();
 	    super.setUpDB("test-data/init_orders.xml");
 	}
 	
-	protected void tearDown() throws Exception {
+    @After
+	public void tearDown() throws Exception {
 		super.tearDown();
+		super.tearDownDB();
 	}
 
+    @Test
 	public void testList() throws Exception {
 		initServletMockObjects();
 		request.setParameter("search.name", "name_page");
@@ -37,6 +41,7 @@ public class OrderActionTest extends Struts2TestCase {
 		assertEquals(1, page.getPage());
 	}
 
+    @Test
 	public void testNewn() throws Exception {
 		initServletMockObjects();
 		
@@ -49,6 +54,7 @@ public class OrderActionTest extends Struts2TestCase {
 		assertNotNull(order);
 	}
 
+    @Test
 	public void testCreate() throws Exception {
 		initServletMockObjects();
 		request.setParameter("order.name", "name");
@@ -60,6 +66,7 @@ public class OrderActionTest extends Struts2TestCase {
 		assertEquals(Action.SUCCESS, result);
 	}
 
+    @Test
 	public void testShow() throws Exception {
 		initServletMockObjects();
 		request.setParameter("id", "102");
@@ -75,6 +82,7 @@ public class OrderActionTest extends Struts2TestCase {
 		assertEquals("note_102", order.getNote());
 	}
 
+    @Test
 	public void testEdit() throws Exception {
 		initServletMockObjects();
 		request.setParameter("id", "103");
@@ -90,6 +98,7 @@ public class OrderActionTest extends Struts2TestCase {
 		assertEquals("note_103", order.getNote());
 	}
 
+    @Test
 	public void testUpdate() throws Exception {
 		initServletMockObjects();
 		request.setParameter("id", "103");
@@ -102,6 +111,7 @@ public class OrderActionTest extends Struts2TestCase {
 		assertEquals(Action.SUCCESS, result);
 	}
 
+    @Test
 	public void testDestroy() throws Exception {
 		initServletMockObjects();
 		request.setParameter("id", "101");
