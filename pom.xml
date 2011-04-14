@@ -10,7 +10,7 @@
 	<groupId>com.bulain</groupId>
 	<artifactId>jbpm4-demo</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>jbpm4-demo</name>
     <url>https://github.com/bulain/jbpm4-demo</url>
   
