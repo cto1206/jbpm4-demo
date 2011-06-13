@@ -5,21 +5,15 @@ import java.util.Date;
 
 import com.bulain.common.model.Trackable;
 
-public class User implements Trackable, Serializable{
-	private static final long serialVersionUID = -1768369564563049527L;
+public class User implements Trackable, Serializable {
+    private static final long serialVersionUID = -1768369564563049527L;
 
-	private Integer id;
-
+    private Integer id;
     private String firstName;
-
     private String lastName;
-
     private String createdBy;
-
     private Date createdAt;
-
     private String updatedBy;
-
     private Date updatedAt;
 
     public Integer getId() {

@@ -5,25 +5,17 @@ import java.util.Date;
 
 import com.bulain.common.model.Trackable;
 
-public class Order implements Trackable, Serializable{
-	private static final long serialVersionUID = 5970173395415963059L;
+public class Order implements Trackable, Serializable {
+    private static final long serialVersionUID = 5970173395415963059L;
 
     private Integer id;
-
     private String name;
-
     private String note;
-
     private String createdBy;
-
     private Date createdAt;
-
     private String updatedBy;
-
     private Date updatedAt;
-
     private String wfId;
-
     private String wfStatus;
 
     public Integer getId() {
