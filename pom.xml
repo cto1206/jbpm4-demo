@@ -207,9 +207,9 @@
                             <goal>run</goal>
                         </goals>
                         <configuration>
-                            <tasks>
+                            <target name="native2ascii">
                                 <native2ascii dest="${project.build.directory}/classes" src="${project.build.directory}/classes" includes="**/*.chinese" ext=".properties" encoding="UTF-8" />
-                            </tasks>
+                            </target>
                         </configuration>
                     </execution>
                 </executions>
