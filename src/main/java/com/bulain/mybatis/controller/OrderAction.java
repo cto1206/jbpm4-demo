@@ -12,6 +12,7 @@ import com.bulain.mybatis.pojo.OrderSearch;
 import com.bulain.mybatis.service.OrderService;
 
 public class OrderAction extends PageSupportActionSupport {
+    private static final String TEXT_ORDER_MODEL = "order.model";
     private static final long serialVersionUID = -1592145738956326742L;
     private static final Logger LOG = Logger.getLogger(OrderAction.class);
 
@@ -45,11 +46,11 @@ public class OrderAction extends PageSupportActionSupport {
     public String create() {
         try {
             orderService.insert(order);
-            String msg = getText("common.createInfo", new String[]{"Order"});
+            String msg = getText("common.createInfo", new String[]{TEXT_ORDER_MODEL});
             addActionMessage(msg);
         } catch (Exception e) {
             LOG.error("create()", e);
-            String msg = getText("common.createError", new String[]{"Order"});
+            String msg = getText("common.createError", new String[]{TEXT_ORDER_MODEL});
             addActionError(msg);
             return ERROR;
         }
@@ -66,11 +67,11 @@ public class OrderAction extends PageSupportActionSupport {
     public String update() {
         try {
             orderService.update(order, false);
-            String msg = getText("common.updateInfo", new String[]{"Order"});
+            String msg = getText("common.updateInfo", new String[]{TEXT_ORDER_MODEL});
             addActionMessage(msg);
         } catch (Exception e) {
             LOG.error("update()", e);
-            String msg = getText("common.updateError", new String[]{"Order"});
+            String msg = getText("common.updateError", new String[]{TEXT_ORDER_MODEL});
             addActionError(msg);
             return ERROR;
         }
@@ -79,11 +80,11 @@ public class OrderAction extends PageSupportActionSupport {
     public String destroy() {
         try {
             orderService.delete(id);
-            String msg = getText("common.deleteInfo", new String[]{"Order"});
+            String msg = getText("common.deleteInfo", new String[]{TEXT_ORDER_MODEL});
             addActionMessage(msg);
         } catch (Exception e) {
             LOG.error("destroy()", e);
-            String msg = getText("common.deleteError", new String[]{"Order"});
+            String msg = getText("common.deleteError", new String[]{TEXT_ORDER_MODEL});
             addActionError(msg);
             return ERROR;
         }
