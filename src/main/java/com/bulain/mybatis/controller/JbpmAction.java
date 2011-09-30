@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.zip.ZipInputStream;
 
+import org.apache.log4j.Logger;
 import org.apache.struts2.dispatcher.DefaultActionSupport;
 import org.jbpm.api.ExecutionService;
 import org.jbpm.api.HistoryService;
@@ -21,6 +22,7 @@ import org.springframework.core.io.ClassPathResource;
 
 public class JbpmAction extends DefaultActionSupport {
     private static final long serialVersionUID = 2150996113887310905L;
+    private static final Logger LOG = Logger.getLogger(JbpmAction.class);
 
     private List<ProcessDefinition> listProcessDefinition;
     private List<ProcessInstance> listProcessInstance;
@@ -55,7 +57,7 @@ public class JbpmAction extends DefaultActionSupport {
         try {
             zis = new ZipInputStream(classPathResource.getInputStream());
         } catch (IOException e) {
-            e.printStackTrace();
+            LOG.error("deploy()", e);
         }
         repositoryService.createDeployment().addResourcesFromZipInputStream(zis).deploy();
 
