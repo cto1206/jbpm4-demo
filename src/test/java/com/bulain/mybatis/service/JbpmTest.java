@@ -13,10 +13,10 @@ import org.jbpm.api.ProcessInstance;
 import org.jbpm.api.RepositoryService;
 import org.jbpm.api.TaskService;
 import org.jbpm.api.task.Task;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.transaction.AfterTransaction;
-import org.springframework.test.context.transaction.BeforeTransaction;
 
 import com.bulain.common.test.ServiceTestCase;
 
@@ -32,14 +32,14 @@ public class JbpmTest extends ServiceTestCase {
     
 	private String deploymentId;
 	
-	@BeforeTransaction
+	@Before
 	public void setUp() throws Exception {
 	    deploymentId = repositoryService.createDeployment()
 	        .addResourceFromClasspath("jpdl/order.jpdl.xml")
 	        .deploy();
 	}
 	
-	@AfterTransaction
+	@After
 	public void tearDown() throws Exception {
 	    repositoryService.deleteDeploymentCascade(deploymentId);
 	}

@@ -6,23 +6,23 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.bulain.common.dataset.DataSet;
 import com.bulain.common.page.Page;
 import com.bulain.common.test.ActionTestCase;
 import com.bulain.mybatis.model.Order;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 
+@DataSet(file="test-data/init_orders.xml")
 public class OrderActionTest extends ActionTestCase {
     @Before
 	public void setUp() throws Exception {
 	    super.setUp();
-	    super.setUpDB("test-data/init_orders.xml");
 	}
 	
     @After
 	public void tearDown() throws Exception {
 		super.tearDown();
-		super.tearDownDB();
 	}
 
     @Test
