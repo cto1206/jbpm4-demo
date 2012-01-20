@@ -4,6 +4,6 @@ import com.bulain.common.dao.PagedMapper;
 import com.bulain.mybatis.model.Order;
 import com.bulain.mybatis.pojo.OrderSearch;
 
-public interface OrderMapper extends PagedMapper<OrderSearch, Order> {
+public interface OrderMapper extends PagedMapper<Order, OrderSearch> {
     Order getByWfId(String wfId);
 }

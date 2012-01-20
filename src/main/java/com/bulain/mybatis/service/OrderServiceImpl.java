@@ -6,7 +6,7 @@ import com.bulain.mybatis.dao.OrderMapper;
 import com.bulain.mybatis.model.Order;
 import com.bulain.mybatis.pojo.OrderSearch;
 
-public class OrderServiceImpl extends PagedServiceImpl<OrderSearch, Order> implements OrderService {
+public class OrderServiceImpl extends PagedServiceImpl<Order, OrderSearch> implements OrderService {
     private OrderMapper orderMapper;
 
     public Order getByWfId(String wfId) {
@@ -14,7 +14,7 @@ public class OrderServiceImpl extends PagedServiceImpl<OrderSearch, Order> imple
     }
 
     @Override
-    public PagedMapper<OrderSearch, Order> getPagedMapper() {
+    public PagedMapper<Order, OrderSearch> getPagedMapper() {
         return orderMapper;
     }
 

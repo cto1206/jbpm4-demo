@@ -6,7 +6,7 @@ import com.bulain.mybatis.dao.UserMapper;
 import com.bulain.mybatis.model.User;
 import com.bulain.mybatis.pojo.UserSearch;
 
-public class UserServiceImpl extends PagedServiceImpl<UserSearch, User> implements UserService {
+public class UserServiceImpl extends PagedServiceImpl<User, UserSearch> implements UserService {
     private UserMapper userMapper;
 
     public UserMapper getUserMapper() {
@@ -16,7 +16,7 @@ public class UserServiceImpl extends PagedServiceImpl<UserSearch, User> implemen
         this.userMapper = userMapper;
     }
     @Override
-    public PagedMapper<UserSearch, User> getPagedMapper() {
+    public PagedMapper<User, UserSearch> getPagedMapper() {
         return userMapper;
     }
 }
