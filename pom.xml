@@ -32,7 +32,7 @@
 		<!-- common -->
         <dependency>
             <groupId>com.bulain</groupId>
-            <artifactId>common</artifactId>
+            <artifactId>common-core</artifactId>
             <version>${common.version}</version>
         </dependency>
 		<!-- jbpm4 -->
@@ -79,6 +79,12 @@
             <artifactId>commons-dbcp</artifactId>
         </dependency>
 		<!-- test -->
+        <dependency>
+            <groupId>com.bulain</groupId>
+            <artifactId>common-test</artifactId>
+            <version>${common.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
