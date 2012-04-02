@@ -20,7 +20,7 @@ public class OrderMapperTest extends DaoTestCase {
 	
     @Test
 	public void testDeleteByPrimaryKey() {
-		int deleteByPrimaryKey = orderMapper.deleteByPrimaryKey(Integer.valueOf(101));
+		int deleteByPrimaryKey = orderMapper.deleteByPrimaryKey(Long.valueOf(101));
 		assertEquals(1, deleteByPrimaryKey);
 	}
 
@@ -44,7 +44,7 @@ public class OrderMapperTest extends DaoTestCase {
 
     @Test
 	public void testSelectByPrimaryKey() {
-		Order selectByPrimaryKey = orderMapper.selectByPrimaryKey(Integer.valueOf(102));
+		Order selectByPrimaryKey = orderMapper.selectByPrimaryKey(Long.valueOf(102));
 		assertNotNull(selectByPrimaryKey);
 		
 		assertEquals("name_102", selectByPrimaryKey.getName());
@@ -54,7 +54,7 @@ public class OrderMapperTest extends DaoTestCase {
     @Test
 	public void testUpdateByPrimaryKeySelective() {
 		Order record = new Order();
-		record.setId(Integer.valueOf(103));
+		record.setId(Long.valueOf(103));
 		record.setName("name-updated");
 		record.setNote("note-updated");
 		int updateByPrimaryKeySelective = orderMapper.updateByPrimaryKeySelective(record);
@@ -64,7 +64,7 @@ public class OrderMapperTest extends DaoTestCase {
     @Test
 	public void testUpdateByPrimaryKey() {
 		Order record = new Order();
-		record.setId(Integer.valueOf(104));
+		record.setId(Long.valueOf(104));
 		record.setName("name-updated");
 		record.setNote("note-updated");
 		int updateByPrimaryKey = orderMapper.updateByPrimaryKey(record);

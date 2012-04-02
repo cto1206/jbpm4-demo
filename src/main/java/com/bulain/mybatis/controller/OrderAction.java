@@ -16,7 +16,7 @@ public class OrderAction extends PageSupportActionSupport {
     private static final long serialVersionUID = -1592145738956326742L;
     private static final Logger LOG = Logger.getLogger(OrderAction.class);
 
-    private Integer id;
+    private Long id;
     private String taskId;
     private String submit;
 
@@ -153,11 +153,11 @@ public class OrderAction extends PageSupportActionSupport {
         }
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

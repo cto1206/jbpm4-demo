@@ -14,7 +14,7 @@ import com.bulain.mybatis.service.UserService;
 public class UserAction extends PageSupportActionSupport {
     private static final long serialVersionUID = -4301484346812182688L;
 
-    private Integer id;
+    private Long id;
     private UserSearch search;
     private User user;
     private List<UserView> listLogin;
@@ -82,10 +82,10 @@ public class UserAction extends PageSupportActionSupport {
         return lgnView;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
